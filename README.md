@@ -1,83 +1,145 @@
-# mut8Current
-<img width="687" alt="Screenshot 2025-01-11 at 8 41 55 PM" src="https://github.com/user-attachments/assets/6798e0d6-4f79-47df-aee3-51a0dcab9a3f" />
+### README for **mut8: Current**
 
-<img width="495" alt="Screenshot 2025-01-11 at 8 06 57 PM" src="https://github.com/user-attachments/assets/cdbc46bb-b659-4e4f-9f7e-0b74b17068fe" />
-<img width="405" alt="Screenshot 2025-01-11 at 8 06 09 PM" src="https://github.com/user-attachments/assets/f05a537a-f5c1-47da-ae62-6792c650d7d9" />
-<img width="435" alt="Screenshot 2025-01-11 at 8 06 15 PM" src="https://github.com/user-attachments/assets/89639976-09db-4d0b-b92f-fbd3ee0923a9" />
+---
+<img width="512" alt="Screenshot 2025-01-12 at 4 55 21 PM" src="https://github.com/user-attachments/assets/1517a089-dcb1-44c8-bd40-1f0797f01047" />
+<img width="512" alt="Screenshot 2025-01-12 at 4 55 36 PM" src="https://github.com/user-attachments/assets/09e47383-c183-45da-9499-f5eac10fe25c" />
+
+---
+
+## Overview
+
+**mut8: Current** is a Python-based application designed to create interpolated presets for audio plugins. This tool enables users to combine factory presets from a selected category and condition, producing new, blended presets with unique characteristics. By preserving compatibility with existing presets and providing customization options, **mut8: Current** empowers users to explore innovative sound design.
+
+---
+
+## Features
+
+- **Category and Condition-Based Preset Blending:**
+  - Combines two existing factory presets to generate new, interpolated presets.
+  - Dynamically blends parameters for unique soundscapes.
+
+- **User-Friendly Interface:**
+  - Built with a clean **Tkinter GUI** for seamless navigation.
+  - Drop-down menus for selecting preset categories and conditions.
+
+- **Enhanced Polar Distortion Handling:**
+  - Dynamically includes `PositiveDistType` and `NegativeDistType` for accurate blending.
+  - Incorporates additional distortion types beyond the default.
+
+- **Exclusion of Incompatible Categories:**
+  - Automatically omits unsupported categories (e.g., `Effect Rack`, `Curve Shapes`, `Chord Bank`, `Rift Distortion`, and `Morph EQ`).
+
+- **Automatic File Management:**
+  - Saves generated presets in the appropriate `User` directory under each category.
+
+- **Error Notifications:**
+  - Alerts users if presets are insufficient or if the default preset is missing.
+
+---
+
+## Prerequisites
+
+### Software Requirements:
+- Python 3.10 or higher.
+- Required Python libraries:
+  - `tkinter`
+  - `os`
+  - `xml.etree.ElementTree`
+
+### File Structure:
+The application requires the following directory structure:
+```
+/Library/Application Support/Minimal/Current/SubPresets/
+└── [Category Name]
+    ├── User/
+    ├── [Condition Name 1]/
+    ├── [Condition Name 2]/
+    └── ...
+```
+**Note:** Each condition folder must contain XML files representing factory presets.
+
+---
+
+## Installation
+
+1. Clone this repository to your local machine:
+   ```bash
+   git clone https://github.com/your-username/mut8-current.git
+   cd mut8-current
+   ```
+
+2. Ensure Python 3.10 or higher is installed on your system.
+
+3. Install the required Python packages:
+   ```bash
+   pip install tkinter
+   ```
+
+4. Set up the required directory structure and include factory presets in the appropriate folders.
+
+---
+
+## Usage
+
+1. Run the application:
+   ```bash
+   python3 mut8_current.py
+   ```
+
+2. Use the dropdown menus to:
+   - Select a **category** (e.g., `Polar Distortion`).
+   - Select a **condition** (e.g., `Filtering`).
+
+3. Click **Generate Preset** to create a blended preset. The new preset will be saved in the corresponding `User` directory under the selected category.
+
+4. For `Polar Distortion` presets, distortion types (`PositiveDistType` and `NegativeDistType`) are dynamically blended for added flexibility.
+
+---
+
+## Supported Categories
+
+| **Category**       | **Description**                                      |
+|---------------------|------------------------------------------------------|
+| Polar Distortion    | Includes blending of parameters and distortion types.|
+| [Other Categories]  | Supports parameter interpolation.                    |
+
+**Excluded Categories:**  
+- Effect Rack  
+- Curve Shapes  
+- Chord Bank  
+- Rift Distortion  
+- Morph EQ  
+
+---
+
+## Known Issues
+
+- Certain categories (e.g., `Effect Rack`, `Morph EQ`) are excluded due to incompatibility with the blending logic.
+- Ensure each condition folder contains at least two presets for interpolation to function correctly.
+
+---
+
+## Future Improvements
+
+- Add support for currently excluded categories by implementing custom blending logic.
+- Extend parameter interpolation logic to additional plugin features.
+- Enhance GUI for advanced customization options (e.g., parameter editing).
+- Support additional file formats beyond XML for greater compatibility.
 
 
+---
 
-Version: 1.0.1
-Author: Mitchell Cohen
-Location: Newton, MA
-Date: 01/11/25
-Overview
+## License
 
-mut8Current is a Python-based toolset and framework designed for working with Synth VST presets in XML format. The project aims to simplify the management, mutation, interpolation, and creation of synthesizer presets. This app will support workflows for analyzing, editing, and generating presets in a structured, user-friendly manner.
-The project is modular and versioned, with detailed documentation for each milestone. Future versions will expand functionality, introducing advanced interpolation features, batch processing, and a highly customizable user interface.
-Current Features (Version 1.0.1)
+**mut8: Current** is licensed under the [MIT License](LICENSE).
 
-mut8CurrentInitAnalyzer
-Purpose: Analyze and format Synth VST XML patch files.
-Functionality:
-Load XML files via a GUI.
-Parse and prettify the XML structure, ensuring consistent formatting with proper white spaces and indentation.
-Save the formatted XML to a specified location.
-Display app details, versioning, and author information via a ? button.
-GUI Labeling:
-Includes app name, author, location, and date stamp in the interface.
-Version control is displayed in the help message.
-Planned Features
+---
 
-1. Patch Mutation and Interpolation
-Description: Develop a mechanism to interpolate between two or more presets to generate new variations.
-Features:
-Load multiple XML patches as input.
-Blend parameter values between patches based on user-defined interpolation factors.
-Export mutated presets as properly formatted XML files.
-2. Default Patch Template Integration
-Description: Hardcode a default patch format into the app, allowing consistent creation of initialized presets.
-Features:
-Define a base template XML structure.
-Provide a one-click option to generate a new default preset.
-3. Batch Processing
-Description: Allow users to process multiple presets simultaneously.
-Features:
-Batch format XML files.
-Batch interpolate multiple patches to generate unique presets.
-4. Advanced GUI with Preset Management
-Description: Expand the GUI to include preset browsing, parameter editing, and visualization tools.
-Features:
-Browse and preview XML presets.
-Edit parameters directly via sliders, dropdowns, and text inputs.
-Visualize preset parameters and changes graphically.
-5. Version Control
-Description: Maintain version tracking for presets and the application.
-Features:
-Embed version metadata in generated XML presets.
-Track application versions in a changelog.
-6. Documentation and Help
-Description: Ensure all tools are thoroughly documented.
-Features:
-Add a dedicated help section to the app with descriptions of all functionalities.
-Include inline tooltips for key features.
-Roadmap
+## Author
 
-Version	Feature Milestones	Estimated Completion
-1.0.1	Initial release: Analyze and format XML files.	Complete (01/11/25)
-1.1.0	Add hardcoded default patch template.	Q1 2025
-1.2.0	Implement basic interpolation between two presets.	Q1 2025
-1.3.0	Enable batch processing of multiple presets for formatting and interpolation.	Q2 2025
-1.4.0	Expand GUI for preset browsing, editing, and graphical visualization.	Q2 2025
-2.0.0	Full-fledged patch management app with advanced mutation and interpolation features, including batch tools.	Q3 2025
-How to Contribute
+**mut8: Current** was developed by **Mitchell Cohen**  
+[www.mitchellcohen.net](https://www.mitchellcohen.net)  
+Location: Newton, MA  
+Year: 2025  
 
-Contributions are welcome! Feel free to submit pull requests or report issues to improve functionality, UI, or documentation.
-License
-
-This project is currently private and owned by Mitchell Cohen. Future licensing details will be provided as the project progresses.
-Contact
-
-For inquiries, reach out to Mitchell Cohen at Newton, MA.
-Notes:
-This README can evolve as the project grows. Let me know if you’d like to add anything or adjust the timeline!
+Feel free to reach out for inquiries, suggestions, or collaboration opportunities!
