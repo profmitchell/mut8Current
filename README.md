@@ -1,8 +1,4 @@
 # mut8Current
-
-<img width="495" alt="Screenshot 2025-01-11 at 8 45 10 PM" src="https://github.com/user-attachments/assets/0bee5b05-7067-41e0-9760-30f96af28a56" />
-
-
 <img width="687" alt="Screenshot 2025-01-11 at 8 41 55 PM" src="https://github.com/user-attachments/assets/6798e0d6-4f79-47df-aee3-51a0dcab9a3f" />
 
 <img width="495" alt="Screenshot 2025-01-11 at 8 06 57 PM" src="https://github.com/user-attachments/assets/cdbc46bb-b659-4e4f-9f7e-0b74b17068fe" />
