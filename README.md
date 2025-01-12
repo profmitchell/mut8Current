@@ -1,14 +1,22 @@
 ### README for **mut8: Current**
 
+DOWNLOAD TO USE: https://github.com/profmitchell/mut8Current/releases/tag/beta
+
 ---
 <img width="512" alt="Screenshot 2025-01-12 at 4 55 21 PM" src="https://github.com/user-attachments/assets/1517a089-dcb1-44c8-bd40-1f0797f01047" />
 <img width="512" alt="Screenshot 2025-01-12 at 4 55 36 PM" src="https://github.com/user-attachments/assets/09e47383-c183-45da-9499-f5eac10fe25c" />
+
+
+DOWNLOAD TO USE: https://github.com/profmitchell/mut8Current/releases/tag/beta
+
 
 ---
 
 ## Overview
 
 **mut8: Current** is a Python-based application designed to create interpolated presets for audio plugins. This tool enables users to combine factory presets from a selected category and condition, producing new, blended presets with unique characteristics. By preserving compatibility with existing presets and providing customization options, **mut8: Current** empowers users to explore innovative sound design.
+
+
 
 ---
 
@@ -143,3 +151,4 @@ Location: Newton, MA
 Year: 2025  
 
 Feel free to reach out for inquiries, suggestions, or collaboration opportunities!
+DOWNLOAD TO USE: https://github.com/profmitchell/mut8Current/releases/tag/beta
